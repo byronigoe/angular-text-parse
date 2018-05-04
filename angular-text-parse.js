@@ -51,6 +51,7 @@ angular.module('text-parse',[])
 						if (types[j] == "Date") {
 							object[headers[j]] = JSON.parse(JSON.stringify(new Date(Date.parse(line[j]))));
 						} else if (types[j] == "Float") {
+							if (line[j] && line[j].substr(0,1) == "$") line[j] = line[j].substr(1);
 							object[headers[j]] = Number.parseFloat(line[j]);
 						} else if (types[j] == "Int") {
 							object[headers[j]] = Number.parseInt(line[j]);
@@ -64,7 +65,7 @@ angular.module('text-parse',[])
 					}
 				}
 			}
-			output.push(object);			
+			output.push(object);
 		}
 		return output;
 	};
