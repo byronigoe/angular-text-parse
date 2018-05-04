@@ -2,6 +2,10 @@
 Generic text parsing utility to create JSON from structured TXT
 
 ## Usage:
+0. Get this module
+```
+npm i -S angular-text-parse
+```
 1. Add the JavaScript to your HTML:
 ```html
 <script src="angular-text-parse.js"></script>
